@@ -15,7 +15,11 @@ print("hello world")
 
 import random
 
+import random
+
 options = ['rock', 'paper', 'scissors']
+games_played = 0
+games_won = 0
 
 def get_user_choice():
     user_choice = input("Enter your choice (rock/paper/scissors): ")
@@ -27,9 +31,6 @@ def get_user_choice():
 def get_computer_choice():
     return random.choice(options)
 
-games_played = 0
-games_won = 0
-
 def determine_winner(user_choice, computer_choice):
     global games_won
     if user_choice == computer_choice:
@@ -39,10 +40,8 @@ def determine_winner(user_choice, computer_choice):
        (user_choice == 'scissors' and computer_choice == 'paper'):
         games_won += 1
         return "You win!"
-    
     else:
         return "You lose!"
-
 
 def play_again():
     user_input = input("Do you want to play again? (yes/no): ")
